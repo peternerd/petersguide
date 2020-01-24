@@ -6,7 +6,7 @@
 **Authentication**
 `token=$(curl -s -X POST -H "Content-Type: application/json" -d '{"username": "'${USERNAME}'", "password": "'${PASSWORD}'" http://hub.docker.com/v2/users/login/ | jq -r .token)`
 
-**List tags of a public image
+**List tags of a public image**
 `curl -L https://registry.hub.docker.com/v2/repositories/${namespace}/${image}/tags?page_size=1024 | jq ".results[].name"`
 for instance:
 `curl -L https://registry.hub.docker.com/v2/repositories/swaggerapi/swagger-ui/tags\?page_size\=1024 | jq ".results[].name"` 
@@ -31,8 +31,8 @@ Set-ExecutionPolicy RemoteSigned
 
 ## Ansible
 Magic variables in ansible:
- - hostvars
- - groups
- - group_names
- - inventory_hostname
+ - `hostvars`
+ - `groups`
+ - `group_names`
+ - `inventory_hostname`
 `hostvars` let you access variables for another host
